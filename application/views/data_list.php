@@ -28,8 +28,8 @@
 			$sukses = $this->session->flashdata('sukses');
 			if ($sukses != "") {
 			?>
-				<div id="notifikasi" class="callout callout-success">
-					<h4> <i class="icon fa fa-check"></i> Sukses</h4>
+				<div id="notifikasi" class="alert alert-success">
+					<h4>Sukses</h4>
 					<p><?php echo $sukses; ?></p>
 				</div>
 			<?php } ?>
@@ -38,8 +38,8 @@
 			$error = $this->session->flashdata('error');
 			if ($error != "") {
 			?>
-				<div id="notifikasi" class="callout callout-danger">
-					<h4><i class="icon fa fa-ban"></i> Gagal</h4>
+				<div id="notifikasi" class="alert alert-danger">
+					<h4>Gagal</h4>
 					<p><?php echo $error; ?></p>
 				</div>
 			<?php } ?>
@@ -57,12 +57,12 @@
 					<h3 class="box-title">Data Example</h3>
 				</div>
 				<div class="box-body table-responsive">
-					<table id="example1" class="table table-bordered table-striped ">
-						<thead>
+					<table id="example1" class="table table-bordered table-striped">
+						<thead class="text-center">
 							<tr>
-								<th width="10px">No</th>
-								<th width="400px">Nama</th>
-								<th width="500px">Sub Unsur</th>
+								<th>No</th>
+								<th>Keterangan Butir Kegiatan</th>
+								<th>Sub Unsur</th>
 								<th>Unsur</th>
 								<th>Aksi</th>
 							</tr>
@@ -77,7 +77,7 @@
 									<td><?php echo $data->nama; ?></td>
 									<td><?php echo $data->sub_unsur; ?></td>
 									<td><?php echo $data->unsur; ?></td>
-									<td>
+									<td class="text-center">
 										<a href="javascript:void(0);" data-toggle="modal" data-target="#modal-ubah<?php echo $data->id; ?>" class="btn btn-sm btn-primary"><i class="fa fa-pencil"></i> Ubah</a>
 										<a href="javascript:void(0);" data-toggle="modal" data-target="#modal-hapus<?php echo $data->id; ?>" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> Hapus</a>
 									</td>
