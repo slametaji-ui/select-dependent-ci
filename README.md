@@ -101,6 +101,42 @@ Buat modal edit pada halaman Views anda
 		</div>
 ```
 
+## JS Select Dependent
+
+method berikut untuk membuat select dependent
+
+```bash
+   	<script type="text/javascript">
+		$(document).ready(function() {
+
+			$('.unsur_id').change(function() {
+				var id = $(this).val();
+				$.ajax({
+					url: "<?php echo site_url('welcome/get_sub_unsur'); ?>",
+					method: "POST",
+					data: {
+						id: id
+					},
+					// async: true,
+					dataType: 'json',
+					success: function(data) {
+
+						var html = '';
+						var i;
+						for (i = 0; i < data.length; i++) {
+							html += '<option value=' + data[i].id + '>' + data[i].nama + '</option>';
+						}
+						$('.sub_unsur_id').html(html);
+
+					}
+				});
+				return false;
+			});
+
+		});
+	</script>
+```
+
 ## Controller Select Dependent
 
 method berikut untuk mengambil data dari select dependent
